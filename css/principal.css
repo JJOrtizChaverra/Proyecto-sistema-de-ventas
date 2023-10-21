@@ -5,28 +5,19 @@
     font-family: 'Inter', sans-serif;
 }
 
-body {
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
-}
-
 /* Estilos del header y barra de navegacion */
 
 header {
-    width: 100%;
     height: 75px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .header__navbar {
-    width: 100%;
     height: 100%;
     margin-left: 32px;
 }
 
 .header-navbar__ul {
-    width: 100%;
     height: 100%;
     display: flex;
     align-items: center;
@@ -48,7 +39,6 @@ header {
 
 /* Botones */
 main {
-    width: 100%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -123,7 +113,8 @@ main {
     padding: 24px 24px;
 }
 
-.main__container-select select, .main__container-select select option {
+.main__container-select select,
+.main__container-select select option {
     padding: 4px 8px 4px 8px;
     border-radius: 12px;
     font-size: 16px;
@@ -153,7 +144,8 @@ tr:nth-child(even) {
     background-color: #ddd;
 }
 
-th, td {
+th,
+td {
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: center;
@@ -171,4 +163,14 @@ td img {
     width: 18px;
     vertical-align: middle;
     cursor: pointer;
+}
+
+.bg-blur {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: #ffff;
+    backdrop-filter: blur(5px);
+    opacity: 0.5;
+    z-index: 1;
 }
