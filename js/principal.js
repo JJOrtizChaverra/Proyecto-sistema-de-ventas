@@ -12,13 +12,20 @@ const inputNombreTienda = document.getElementById('name-store');
 
 const btnCancelarEliminarTienda = document.getElementById('btn-cancelar-eliminar-tienda');
 
+const ventanaEliminarProducto = document.getElementById('ventana-eliminar-producto');
 const btnCancelarAñadirProducto = document.getElementById('btn-cancelar-añadir-producto');
 const inputNombreProducto = document.getElementById('product-name');
 const inputPrecioProducto = document.getElementById('product-price');
 const inputExistenciasProducto = document.getElementById('product-exists');
 
+const btnEliminarProducto = document.getElementById('btn-eliminar-producto');
+const iconoEliminar = document.querySelectorAll('#icon-trash');
+const btnCancelarEliminarProducto = document.getElementById('btn-cancelar-eliminar-producto');
+
 const efectoBlur = document.getElementById('efecto-blur');
 const body = document.getElementsByTagName('body')[0];
+
+let acumIconoEliminar = 0;
 
 // Funcion para mostrar la ventana modal de crear tienda
 const mostrarVentanaModal = ventana => {
@@ -40,6 +47,22 @@ const ocultarVentanasModales = ventana => {
 
     // Ocultar ventanas
     ventana.style.display = 'none';
+}
+
+const mostrarIconoEliminar = () => {
+    if (acumIconoEliminar === 0) {
+        iconoEliminar.forEach(icono => {
+            icono.style.display = 'inline';
+        })
+        btnEliminarProducto.innerText = 'Cancelar eliminacion';
+        acumIconoEliminar++;
+    } else {
+        iconoEliminar.forEach(icono => {
+            icono.style.display = 'none';
+        })
+        btnEliminarProducto.innerText = 'Eliminar producto';
+        acumIconoEliminar--;
+    }
 }
 
 // Funcion para validar que el usuario no cree una tienda con el input vacio
@@ -80,3 +103,9 @@ btnAñadirProducto.addEventListener('click', function () { mostrarVentanaModal(v
 btnCancelarCrearTienda.addEventListener('click', function () { ocultarVentanasModales(ventanaCrearTienda) });
 btnCancelarEliminarTienda.addEventListener('click', function () { ocultarVentanasModales(ventanaEliminarTienda) });
 btnCancelarAñadirProducto.addEventListener('click', function () { ocultarVentanasModales(ventanaAñadirProducto) })
+
+btnEliminarProducto.addEventListener('click', mostrarIconoEliminar);
+iconoEliminar.forEach(icono => {
+    icono.addEventListener('click', function () { mostrarVentanaModal(ventanaEliminarProducto) })
+})
+btnCancelarEliminarProducto.addEventListener('click', function () { ocultarVentanasModales(ventanaEliminarProducto) });
