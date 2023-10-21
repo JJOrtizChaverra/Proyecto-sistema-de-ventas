@@ -35,7 +35,7 @@
             <button id="btn-crear-tienda">Crear tienda</button>
             <button id="btn-eliminar-tienda">Eliminar tienda</button>
             <button id="btn-añadir-producto">Añadir productos</button>
-            <button>Eliminar productos</button>
+            <button id="btn-eliminar-producto">Eliminar productos</button>
             <button>Modificar productos</button>
 
             <div class="container-buttons__container-search">
@@ -63,7 +63,7 @@
             <tbody>
                 <tr>
                     <td>
-                        <img src="./assets/icons/trash.svg" alt="X">
+                        <img id="icon-trash" src="./assets/icons/trash.svg" alt="X">
                         1
                     </td>
                     <td>Leche</td>
@@ -123,6 +123,17 @@
                 <div class="form-add-product__container-buttons">
                     <input id="btn-cancelar-añadir-producto" type="button" value="Cancelar">
                     <input id="btn-confirmar-añadir-producto" type="submit" value="Crear">
+                </div>
+            </form>
+        </div>
+
+        <div class="main__ventana-eliminar-tienda" id="ventana-eliminar-producto">
+            <h2>Eliminar producto</h2>
+            <form action="" class="ventana-eliminar-tienda__form">
+                <label for="">¿Esta seguro que desea eliminar este producto?</label>
+                <div>
+                    <input id="btn-cancelar-eliminar-producto" type="button" value="Cancelar">
+                    <input id="btn-confirmar-eliminar-producto" type="submit" value="Confirmar">
                 </div>
             </form>
         </div>
