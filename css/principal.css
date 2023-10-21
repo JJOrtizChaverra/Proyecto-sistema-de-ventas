@@ -178,9 +178,9 @@ td img {
     z-index: 1;
 }
 
-/* Estilos ventana crear tienda */
+/* Estilos ventanas modales */
 
-.main__ventana-crear-tienda {
+.main__ventana-crear-tienda, .main__ventana-eliminar-tienda {
     display: none;
     background-color: #ffff;
     flex-direction: column;
@@ -193,15 +193,16 @@ td img {
     border-radius: 20px;
     border: 1px solid black;
     padding: 16px;
+    text-align: center;
     z-index: 1;
 }
 
-.main__ventana-crear-tienda h2 {
+.main__ventana-crear-tienda h2, .main__ventana-eliminar-tienda h2 {
     font-size: 20px;
     font-weight: bold;
 }
 
-.ventana-crear-tienda__form {
+.ventana-crear-tienda__form, .ventana-eliminar-tienda__form {
     width: 100%;
     height: 100%;
     display: flex;
@@ -210,7 +211,7 @@ td img {
     align-items: center;
 }
 
-.ventana-crear-tienda__form label {
+.ventana-crear-tienda__form label, .ventana-eliminar-tienda__form label {
     font-weight: 600;
 }
 
@@ -220,13 +221,13 @@ td img {
     padding: 6px;
 }
 
-.ventana-crear-tienda__form div {
+.ventana-crear-tienda__form div, .ventana-eliminar-tienda__form div {
     width: 100%;
     display: flex;
     justify-content: space-evenly;
 }
 
-.ventana-crear-tienda__form div button, .ventana-crear-tienda__form div input {
+.ventana-crear-tienda__form div button, .ventana-crear-tienda__form div input, .ventana-eliminar-tienda__form div button, .main__ventana-eliminar-tienda div input {
     background-color: #F6F6F6;
     border-radius: 12px;
     padding: 8px 12px;
@@ -237,7 +238,7 @@ td img {
     width: 100px;
 }
 
-.ventana-crear-tienda__form div button:hover, .ventana-crear-tienda__form div input:hover {
+.ventana-crear-tienda__form div button:hover, .ventana-crear-tienda__form div input:hover, .ventana-eliminar-tienda__form div button:hover, .main__ventana-eliminar-tienda div input:hover {
     background-color: #eeeeee;
 }
 
