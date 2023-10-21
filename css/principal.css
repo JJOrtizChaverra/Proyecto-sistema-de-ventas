@@ -165,7 +165,10 @@ td img {
     cursor: pointer;
 }
 
+/* Efecto blur */
+
 .bg-blur {
+    display: none;
     width: 100%;
     height: 100%;
     position: absolute;
@@ -173,4 +176,71 @@ td img {
     backdrop-filter: blur(5px);
     opacity: 0.5;
     z-index: 1;
+}
+
+/* Estilos ventana crear tienda */
+
+.main__ventana-crear-tienda {
+    display: none;
+    background-color: #ffff;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 23%;
+    height: 38%;
+    position: absolute;
+    top: 17%;
+    border-radius: 20px;
+    border: 1px solid black;
+    padding: 16px;
+    z-index: 1;
+}
+
+.main__ventana-crear-tienda h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ventana-crear-tienda__form {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.ventana-crear-tienda__form label {
+    font-weight: 600;
+}
+
+.ventana-crear-tienda__form input:not(.ventana-crear-tienda__form input[type="submit"]) {
+    border-radius: 12px;
+    border: 1px solid black;
+    padding: 6px;
+}
+
+.ventana-crear-tienda__form div {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.ventana-crear-tienda__form div button, .ventana-crear-tienda__form div input {
+    background-color: #F6F6F6;
+    border-radius: 12px;
+    padding: 8px 12px;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid black;
+    width: 100px;
+}
+
+.ventana-crear-tienda__form div button:hover, .ventana-crear-tienda__form div input:hover {
+    background-color: #eeeeee;
+}
+
+.ventana-crear-tienda__form input:focus {
+    outline: none;
 }
