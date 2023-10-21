@@ -33,7 +33,7 @@
     <main>
         <div class="main__container-buttons">
             <button id="btn-crear-tienda">Crear tienda</button>
-            <button>Eliminar tienda</button>
+            <button id="btn-eliminar-tienda">Eliminar tienda</button>
             <button>Añadir productos</button>
             <button>Eliminar productos</button>
             <button>Modificar productos</button>
@@ -82,6 +82,17 @@
                 <div>
                     <button id="btn-cancelar-crear-tienda" type="button">Cancelar</button>
                     <input id="btn-confirmar-crear-tienda" type="submit" value="Crear">
+                </div>
+            </form>
+        </div>
+
+        <div class="main__ventana-eliminar-tienda" id="ventana-eliminar-tienda">
+            <h2>Eliminar tienda</h2>
+            <form action="" class="ventana-eliminar-tienda__form">
+                <label for="">¿Esta seguro que desea eliminar esta tienda?</label>
+                <div>
+                    <input id="btn-cancelar-eliminar-tienda" type="button" value="Cancelar">
+                    <input id="btn-confirmar-eliminar-tienda" type="submit" value="Confirmar">
                 </div>
             </form>
         </div>
