@@ -34,7 +34,7 @@
         <div class="main__container-buttons">
             <button id="btn-crear-tienda">Crear tienda</button>
             <button id="btn-eliminar-tienda">Eliminar tienda</button>
-            <button>Añadir productos</button>
+            <button id="btn-añadir-producto">Añadir productos</button>
             <button>Eliminar productos</button>
             <button>Modificar productos</button>
 
@@ -93,6 +93,36 @@
                 <div>
                     <input id="btn-cancelar-eliminar-tienda" type="button" value="Cancelar">
                     <input id="btn-confirmar-eliminar-tienda" type="submit" value="Confirmar">
+                </div>
+            </form>
+        </div>
+
+        <div class="main__ventana-añadir-producto" id="ventana-añadir-producto">
+            <h2>Añadir un producto</h2>
+            <form action="" class="ventana-añadir-producto__form" onsubmit="return validarAñadirProducto()">
+                <div class="form-add-product__container-data">
+                    <label for="product-name">Nombre</label>
+                    <input type="text" name="nombre-producto" id="product-name">
+                </div>
+                <div class="form-add-product__container-price-exists">
+                    <div>
+                        <label for="product-price">Precio</label>
+                        <input type="number" name="precio-producto" id="product-price">
+                    </div>
+                    <div>
+                        <label for="product-exists">Existencias</label>
+                        <input type="number" name="existencias-producto" id="product-exists">
+                    </div>
+                </div>
+                <div class="form-add-product__container-data">
+                    <label for="store">Pertenece a la tienda:</label>
+                    <select name="pertenece-a-la-tienda" id="store">
+                        <option value="Maddox">Maddox</option>
+                    </select>
+                </div>
+                <div class="form-add-product__container-buttons">
+                    <input id="btn-cancelar-añadir-producto" type="button" value="Cancelar">
+                    <input id="btn-confirmar-añadir-producto" type="submit" value="Crear">
                 </div>
             </form>
         </div>
