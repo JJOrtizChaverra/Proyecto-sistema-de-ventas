@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Estilos del header y barra de navegacion */
+
+header {
+    width: 100%;
+    height: 75px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.header__navbar {
+    width: 100%;
+    height: 100%;
+    margin-left: 32px;
+}
+
+.header-navbar__ul {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-ul__list-item {
+    margin-right: 30px;
+    font-size: 20px;
+    list-style: none;
+    font-weight: bold;
+}
+
+.navbar-ul__list-item a {
+    text-decoration: none;
+    color: black;
+}
