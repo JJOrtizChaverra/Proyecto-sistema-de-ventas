@@ -36,7 +36,7 @@
             <button id="btn-eliminar-tienda">Eliminar tienda</button>
             <button id="btn-añadir-producto">Añadir productos</button>
             <button id="btn-eliminar-producto">Eliminar productos</button>
-            <button>Modificar productos</button>
+            <button id="btn-modificar-producto">Modificar productos</button>
 
             <div class="container-buttons__container-search">
                 <img src="./assets/icons/search.svg" alt="">
@@ -50,7 +50,7 @@
             </select>
         </div>
 
-        <table>
+        <table id="tabla-productos">
             <thead>
                 <tr>
                     <th>Id</th>
@@ -64,6 +64,7 @@
                 <tr>
                     <td>
                         <img id="icon-trash" src="./assets/icons/trash.svg" alt="X">
+                        <img id="icon-edit" src="./assets/icons/edit.svg" alt="E">
                         1
                     </td>
                     <td>Leche</td>
@@ -99,7 +100,7 @@
 
         <div class="main__ventana-añadir-producto" id="ventana-añadir-producto">
             <h2>Añadir un producto</h2>
-            <form action="" class="ventana-añadir-producto__form" onsubmit="return validarAñadirProducto()">
+            <form action="" class="ventana-añadir-producto__form" id="formulario-añadir-producto">
                 <div class="form-add-product__container-data">
                     <label for="product-name">Nombre</label>
                     <input type="text" name="nombre-producto" id="product-name">
@@ -134,6 +135,36 @@
                 <div>
                     <input id="btn-cancelar-eliminar-producto" type="button" value="Cancelar">
                     <input id="btn-confirmar-eliminar-producto" type="submit" value="Confirmar">
+                </div>
+            </form>
+        </div>
+
+        <div class="main__ventana-añadir-producto" id="ventana-modificar-producto">
+            <h2>Modificar un producto</h2>
+            <form action="" class="ventana-añadir-producto__form" id="formulario-modificar-producto">
+                <div class="form-add-product__container-data">
+                    <label for="product-name-edit">Nombre</label>
+                    <input type="text" name="nombre-producto" id="product-name-edit">
+                </div>
+                <div class="form-add-product__container-price-exists">
+                    <div>
+                        <label for="product-price-edit">Precio</label>
+                        <input type="number" name="precio-producto" id="product-price-edit">
+                    </div>
+                    <div>
+                        <label for="product-exists-edit">Existencias</label>
+                        <input type="number" name="existencias-producto" id="product-exists-edit">
+                    </div>
+                </div>
+                <div class="form-add-product__container-data">
+                    <label for="store">Pertenece a la tienda:</label>
+                    <select name="pertenece-a-la-tienda" id="store">
+                        <option value="Maddox">Maddox</option>
+                    </select>
+                </div>
+                <div class="form-add-product__container-buttons">
+                    <input id="btn-cancelar-modificar-producto" type="button" value="Cancelar">
+                    <input id="btn-confirmar-modificar-producto" type="submit" value="Guardar">
                 </div>
             </form>
         </div>
