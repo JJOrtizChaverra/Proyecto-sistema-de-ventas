@@ -136,3 +136,11 @@ main {
     grid-column: 2;
     grid-row: 1;
 }
+
+/* Estilos de errores al registrarse */
+
+.span-error {
+    font-size: 13px;
+    color: red;
+    margin-top: -6px;
+}

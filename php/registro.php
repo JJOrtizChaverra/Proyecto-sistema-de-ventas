@@ -2,6 +2,8 @@
 
 include('./conexion.php');
 
+session_start();
+
 if ($_POST) {
     $nombre = $_POST['nombre'];
     $apellido = $_POST['apellido'];
@@ -15,7 +17,13 @@ if ($_POST) {
 
     $exec_query = mysqli_query($con, $insert);
 
-    header("Location: ../principal.html");
+    header("Location: ./principal.php");
+
+    session_start();
+    $_SESSION['cedula'] = $cedula;
+    $_SESSION['nombre'] = $nombre.' '.$apellido;
+
+    // $con -> close();
 }
 
 ?>

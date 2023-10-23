@@ -121,3 +121,11 @@ main {
 .main-form__container-data input[type="submit"]:hover {
     background-color: #ebebeb;
 }
+
+/* Estilos de errores al inicar sesion */
+
+.span-error {
+    font-size: 13px;
+    color: red;
+    margin-top: 6px;
+}
