@@ -7,7 +7,6 @@ const btnEliminarTienda = document.getElementById('btn-eliminar-tienda');
 const btnConfirmarEliminarTienda = document.getElementById('btn-confirmar-eliminar-tienda');
 const btnAñadirProducto = document.getElementById('btn-añadir-producto');
 const btnConfirmarAñadirProducto = document.getElementById('btn-confirmar-añadir-producto');
-
 const btnCancelarCrearTienda = document.getElementById('btn-cancelar-crear-tienda');
 const btnConfirmarCrearTienda = document.getElementById('btn-confirmar-crear-tienda');
 const inputNombreTienda = document.getElementById('name-store');

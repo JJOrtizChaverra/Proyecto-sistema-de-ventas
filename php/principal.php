@@ -38,7 +38,6 @@ if (isset($_SESSION['sesion_destruida']) && $_SESSION['sesion_destruida'] === tr
     }
 
     $exec_query_productos = mysqli_query($con, $select_productos);
-
     $array_productos = mysqli_fetch_all($exec_query_productos);
 }
 
@@ -69,7 +68,7 @@ if (isset($_SESSION['sesion_destruida']) && $_SESSION['sesion_destruida'] === tr
     <header>
         <nav class="header__navbar">
             <ul class="header-navbar__ul">
-                <li class="navbar-ul__list-item"><a href="./perfil.html">Perfil</a></li>
+                <li class="navbar-ul__list-item"><a href="./perfil.php">Perfil</a></li>
                 <li class="navbar-ul__list-item" id="link-cerrar-sesion" style="cursor: pointer;">Cerrar sesion</li>
                 <li class="navbar-ul__list-item"><a href="./acerca-de.html">Acerca de</a></li>
             </ul>
@@ -91,14 +90,13 @@ if (isset($_SESSION['sesion_destruida']) && $_SESSION['sesion_destruida'] === tr
         </div>
 
         <div class="main__container-select">
-            <form action="./principal.php" method="get" id="formulario-select-tiendas">
+            <form action="./principal.php" method="get" id="formulario-select-tiendas" style="display: flex; justify-content: center;">
                 <select name="lista-tiendas" id="lista-tiendas-tabla">
                     <option value="Todas">Todas</option>
                     <?php foreach ($array_tienda as $tienda) { ?>
                         <option value="<?php echo $tienda[0] ?>"><?php echo $tienda[1] ?></option>
                     <?php } ?>
                 </select>
-                <!-- <input  value="Enviar"> -->
             </form>
         </div>
 

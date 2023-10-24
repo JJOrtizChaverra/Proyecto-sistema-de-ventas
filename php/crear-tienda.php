@@ -10,7 +10,7 @@ if ($_POST) {
     $cedula_dueño = (int) $_SESSION['cedula'];
 
     $con = conexion();
-    $insert = "INSERT INTO tiendas VALUES(null, '$nombre_tienda', 'Carrera 50D #88-14', 0, '$dueño', $cedula_dueño)";
+    $insert = "INSERT INTO tiendas VALUES(null, '$nombre_tienda', 0, '$dueño', $cedula_dueño)";
 
     $exec_query = mysqli_query($con, $insert);
 
