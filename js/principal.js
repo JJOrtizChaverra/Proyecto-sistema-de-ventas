@@ -47,6 +47,8 @@ const inputSearch = document.getElementById('buscar-productos');
 const selectTiendasEliminarTienda = document.getElementById('list-store-eliminar-tienda');
 const selectTiendasAñadirProducto = document.getElementById('list-store-añadir-producto');
 
+const selectTiendasModificarProducto = document.getElementById('list-store-modifie-products');
+
 let acumIconoEliminar = 0;
 let acumIconoEditar = 0;
 
@@ -220,12 +222,15 @@ iconoEditar.forEach(icono => {
         inputNombreProductoEditar.value = celdas[1].textContent;
         inputPrecioProductoEditar.value = celdas[2].textContent;
         inputExistenciasProductoEditar.value = celdas[3].textContent;
+
+        selectTiendasModificarProducto.selectedIndex = selectTiendas.selectedIndex - 1;
     })
 });
 
 btnConfirmarModificarProducto.addEventListener('click', function () {
+    // Enviar a PHP a través de AJAX
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', 'http://localhost/Proyectos/Proyecto-sistema-de-ventas/php/modificar-productos.php', true);
+    xhr.open('POST', '../php/modificar-productos.php', true);
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.onreadystatechange = function () {
         if (xhr.readyState == XMLHttpRequest.DONE && xhr.status == 200) {
@@ -233,8 +238,7 @@ btnConfirmarModificarProducto.addEventListener('click', function () {
             console.log(xhr.responseText);
         }
     };
-    // Enviar los datos al archivo PHP
-    xhr.send('&id-producto=' + idProducto);
+    xhr.send('id-producto=' + celdas[0].innerText.replace(/\s+/g, ' ').trim());
 });
 
 
@@ -301,9 +305,24 @@ btnConfirmarEliminarTienda.addEventListener('click', function () {
 
 const linkCerrarSesion = document.getElementById('link-cerrar-sesion');
 
+const toggleButton = document.querySelector('.header__toggle');
+const navBar = document.getElementById('header__navbar');
+
+let acumNavBar = 0;
+
+toggleButton.addEventListener('click', function () {
+    if (acumNavBar === 0) {
+        navBar.style.display = 'block';
+        acumNavBar++;
+    } else {
+        navBar.style.display = 'none';
+        acumNavBar--;
+    }
+});
+
 linkCerrarSesion.addEventListener('click', function () {
     window.location.href = "../index.html";
     var xhr = new XMLHttpRequest();
     xhr.open('GET', '../php/cerrar-sesion.php', true);
     xhr.send();
-})
+});

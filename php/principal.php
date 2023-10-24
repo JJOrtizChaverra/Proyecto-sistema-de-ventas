@@ -66,13 +66,23 @@ if (isset($_SESSION['sesion_destruida']) && $_SESSION['sesion_destruida'] === tr
     </div>
     <!-- Barra de navegacion -->
     <header>
-        <nav class="header__navbar">
-            <ul class="header-navbar__ul">
-                <li class="navbar-ul__list-item"><a href="./perfil.php">Perfil</a></li>
-                <li class="navbar-ul__list-item" id="link-cerrar-sesion" style="cursor: pointer;">Cerrar sesion</li>
-                <li class="navbar-ul__list-item"><a href="./acerca-de.html">Acerca de</a></li>
-            </ul>
-        </nav>
+        <div class="header__wrapper">
+            <div class="header__logo">
+                <!-- Aquí puedes agregar tu logo si lo tienes -->
+            </div>
+            <div class="header__toggle">
+                <div class="toggle__bar"></div>
+                <div class="toggle__bar"></div>
+                <div class="toggle__bar"></div>
+            </div>
+            <nav class="header__navbar" id="header__navbar">
+                <ul class="header-navbar__ul">
+                    <li class="navbar-ul__list-item"><a href="./perfil.php">Perfil</a></li>
+                    <li class="navbar-ul__list-item" id="link-cerrar-sesion" style="cursor: pointer;">Cerrar sesion</li>
+                    <li class="navbar-ul__list-item"><a href="./acerca-de.html">Acerca de</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
@@ -90,7 +100,7 @@ if (isset($_SESSION['sesion_destruida']) && $_SESSION['sesion_destruida'] === tr
         </div>
 
         <div class="main__container-select">
-            <form action="./principal.php" method="get" id="formulario-select-tiendas" style="display: flex; justify-content: center;">
+            <form action="./principal.php" method="get" id="formulario-select-tiendas">
                 <select name="lista-tiendas" id="lista-tiendas-tabla">
                     <option value="Todas">Todas</option>
                     <?php foreach ($array_tienda as $tienda) { ?>
@@ -207,23 +217,23 @@ if (isset($_SESSION['sesion_destruida']) && $_SESSION['sesion_destruida'] === tr
             <form action="./modificar-productos.php" method="post" class="ventana-añadir-producto__form" id="formulario-modificar-producto">
                 <div class="form-add-product__container-data">
                     <label for="product-name-edit">Nombre</label>
-                    <input type="text" name="nombre-producto" id="product-name-edit">
+                    <input type="text" name="name-producto" id="product-name-edit">
                 </div>
                 <div class="form-add-product__container-price-exists">
                     <div>
                         <label for="product-price-edit">Precio</label>
-                        <input type="number" name="precio-producto" id="product-price-edit">
+                        <input type="number" name="price-producto" id="product-price-edit">
                     </div>
                     <div>
                         <label for="product-exists-edit">Existencias</label>
-                        <input type="number" name="existencias-producto" id="product-exists-edit">
+                        <input type="number" name="exists-producto" id="product-exists-edit">
                     </div>
                 </div>
                 <div class="form-add-product__container-data">
                     <label for="store">Pertenece a la tienda:</label>
-                    <select name="pertenece-a-la-tienda" id="store">
+                    <select name="pertenece-a-la-tienda" id="list-store-modifie-products">
                         <?php foreach ($array_tienda as $tienda) { ?>
-                            <option value="<?php echo $tienda[0] ?>"><?php echo $tienda[1] ?></option>
+                            <option value="<?php echo $tienda[0] . '-' . $tienda[1] ?>"><?php echo $tienda[1] ?></option>
                         <?php } ?>
                     </select>
                 </div>

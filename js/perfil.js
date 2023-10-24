@@ -14,6 +14,8 @@ const inputCambiarContraseña = document.getElementById('new-password');
 
 const selectTiendas = document.getElementById('lista-tiendas-perfil');
 
+const mensajeNo = document.getElementById('mensaje-no');
+
 const body = document.getElementsByTagName('body')[0];
 
 const mostrarVentanaCambiarContraseña = () => {
@@ -48,13 +50,21 @@ btnInformacionTiendas.addEventListener('click', function () {
 btnCambiarContrasela.addEventListener('click', mostrarVentanaCambiarContraseña);
 btnCancelarCambiarContraseña.addEventListener('click', ocultarVentanaCambiarContraseña);
 
-document.getElementById('lista-tiendas-perfil').addEventListener('change', function () {
-    document.getElementById('form-tiendas-perfil').submit();
-});
-
 const seleccionGuardada = localStorage.getItem('seleccionTienda');
 
-// Obtener el elemento select
+if (selectTiendas.options.length < 1) {
+    containerInformacionTiendas.getElementsByTagName('form')[0].style.display = 'none';
+    containerInformacionTiendas.getElementsByTagName('div')[1].style.display = 'none';
+    containerInformacionTiendas.getElementsByTagName('div')[2].style.display = 'none';
+    containerInformacionTiendas.getElementsByTagName('div')[3].style.display = 'none';
+    mensajeNo.style.display = 'block';
+} else {
+    mensajeNo.style.display = 'none';
+    containerInformacionTiendas.getElementsByTagName('form')[0].style.display = 'flex';
+    containerInformacionTiendas.getElementsByTagName('div')[1].style.display = 'flex';
+    containerInformacionTiendas.getElementsByTagName('div')[2].style.display = 'flex';
+    containerInformacionTiendas.getElementsByTagName('div')[3].style.display = 'flex';
+}
 
 // Establecer la selección si hay una almacenada
 if (seleccionGuardada) {
@@ -65,3 +75,26 @@ if (seleccionGuardada) {
 selectTiendas.addEventListener('change', function () {
     localStorage.setItem('seleccionTienda', this.value);
 });
+
+document.getElementById('lista-tiendas-perfil').addEventListener('change', function () {
+    document.getElementById('form-tiendas-perfil').submit();
+});
+
+const toggleButton = document.querySelector('.header__toggle');
+const navBar = document.getElementById('header__navbar');
+
+let acumNavBar = 0;
+
+toggleButton.addEventListener('click', function () {
+    if (acumNavBar === 0) {
+        navBar.style.display = 'block';
+        acumNavBar++;
+    } else {
+        navBar.style.display = 'none';
+        acumNavBar--;
+    }
+});
+
+document.getElementById('btn-confirmar-cambiar-tienda').addEventListener('click', function () {
+    alert("Contraseña reestablecida, inicia sesion de nuevo");
+})

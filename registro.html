@@ -18,13 +18,22 @@
 <body>
     <!-- Barra de navegacion -->
     <header>
-        <nav class="header__navbar">
-            <ul class="header-navbar__ul">
-                <li class="navbar-ul__list-item"><a href="./index.html">Inicio</a></li>
-                <li class="navbar-ul__list-item"><a href="./php/iniciar-sesion.php">Iniciar sesion</a></li>
-                <li class="navbar-ul__list-item"><a href="./acerca-de.html">Acerca de</a></li>
-            </ul>
-        </nav>
+        <div class="header__wrapper">
+            <div class="header__logo">
+                <!-- Aquí puedes agregar tu logo si lo tienes -->
+            </div>
+            <div class="header__toggle">
+                <div class="toggle__bar"></div>
+                <div class="toggle__bar"></div>
+                <div class="toggle__bar"></div>
+            </div>
+            <nav class="header__navbar" id="header__navbar">
+                <ul class="header-navbar__ul">
+                    <li class="navbar-ul__list-item"><a href="./php/iniciar-sesion.php">Iniciar sesion</a></li>
+                    <li class="navbar-ul__list-item"><a href="./acerca-de.html">Acerca de</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Main principal -->

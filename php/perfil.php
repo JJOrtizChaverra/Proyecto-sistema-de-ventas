@@ -38,7 +38,6 @@ if ($_GET) {
         $precio_total_tienda = $precio_total_tienda + $producto[2];
         $total_productos++;
     }
-    
 }
 
 
@@ -67,12 +66,22 @@ if ($_GET) {
     </div>
     <!-- Barra de navegacion -->
     <header>
-        <nav class="header__navbar">
-            <ul class="header-navbar__ul">
-                <li class="navbar-ul__list-item"><a href="./principal.php">Mis tiendas</a></li>
-                <li class="navbar-ul__list-item"><a href="./acerca-de.html">Acerca de</a></li>
-            </ul>
-        </nav>
+        <div class="header__wrapper">
+            <div class="header__logo">
+                <!-- Aquí puedes agregar tu logo si lo tienes -->
+            </div>
+            <div class="header__toggle">
+                <div class="toggle__bar"></div>
+                <div class="toggle__bar"></div>
+                <div class="toggle__bar"></div>
+            </div>
+            <nav class="header__navbar" id="header__navbar">
+                <ul class="header-navbar__ul">
+                    <li class="navbar-ul__list-item"><a href="./php/principal.php">Mis tiendas</a></li>
+                    <li class="navbar-ul__list-item"><a href="./acerca-de.html">Acerca de</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <!-- Main principal -->
@@ -111,23 +120,29 @@ if ($_GET) {
                 </div>
                 <div id="container-informacion-tienda" class="container-informacion-tienda">
                     <h2 class="main__container-h2">Informacion de tiendas</h2>
-                    <form action="./perfil.php" method="get" id="form-tiendas-perfil">
+                    <div>
+                        <p id="mensaje-no" style="display: none; font-size: 24px; font-weight: 600;">No se encontraron
+                            tiendas</p>
+                    </div>
+                    <form action="./perfil.php" method="get" id="form-tiendas-perfil" style="display: flex; justify-content: center;">
                         <select name="lista-tiendas-perfil" id="lista-tiendas-perfil">
                             <?php foreach ($array_tienda as $tienda) { ?>
-                                <option value="<?php echo $tienda[0] ?>"><?php echo $tienda[1] ?></option>
+                                <option value="<?php echo $tienda[0] ?>">
+                                    <?php echo $tienda[1] ?>
+                                </option>
                             <?php } ?>
                         </select>
                     </form>
                     <div>
-                        <label for="products">Total de productos</label>
+                        <label for="products">Total de productos:</label>
                         <input type="text" readonly value="<?php echo $total_productos ?>">
                     </div>
                     <div>
-                        <label for="exists">Total de existencias</label>
+                        <label for="exists">Total de existencias:</label>
                         <input type="text" readonly value="<?php echo $total_existencias ?>">
                     </div>
                     <div>
-                        <label for="products">Precio total de la tienda</label>
+                        <label for="products">Precio total de la tienda:</label>
                         <input type="text" readonly value="<?php echo $precio_total_tienda ?>">
                     </div>
                 </div>
@@ -137,10 +152,10 @@ if ($_GET) {
             <h2>Cambiar contraseña</h2>
             <form action="./cambiar-contraseña.php" method="post" class="ventana-cambiar-contraseña__form">
                 <label for="new-password">Nueva contraseña</label>
-                <input type="text" name="nueva-contraseña" id="new-password">
+                <input type="password" name="nueva-contraseña" id="new-password">
                 <div>
-                    <button id="btn-cancelar-crear-tienda" type="button">Cancelar</button>
-                    <input id="btn-confirmar-crear-tienda" type="submit" value="Cambiar">
+                    <button id="btn-cancelar-cambiar-tienda" type="button">Cancelar</button>
+                    <input id="btn-confirmar-cambiar-tienda" type="submit" value="Cambiar">
                 </div>
             </form>
         </div>

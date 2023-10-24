@@ -6,7 +6,6 @@
 }
 
 body {
-    width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
@@ -44,6 +43,29 @@ header {
     color: black;
 }
 
+.header__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 32px;
+    box-sizing: border-box;
+}
+
+.header__toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.toggle__bar {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+    margin: 3px 0;
+}
+
 /* Estilos del main */
 
 main {
@@ -79,7 +101,6 @@ main {
 
 .main-container__options {
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -169,7 +190,7 @@ main {
     color: #3a3a3a;
 }
 
-.container-informacion-tienda  {
+.container-informacion-tienda {
     display: flex;
     width: 100%;
     height: 70%;
@@ -186,7 +207,7 @@ main {
 
 .container-informacion-tienda div label {
     font-size: 16px;
-    width: 100%;
+    width: 42%;
     font-weight: bold;
 }
 
@@ -196,7 +217,12 @@ main {
     border-right: none;
 }
 
-select, select option {
+.container-informacion-tienda div input:focus {
+    outline: none;
+}
+
+select,
+select option {
     padding: 4px 8px 4px 8px;
     border-radius: 12px;
     font-size: 16px;
@@ -251,7 +277,8 @@ select, select option {
     justify-content: space-evenly;
 }
 
-.ventana-cambiar-contraseña__form div button, .ventana-cambiar-contraseña__form div input {
+.ventana-cambiar-contraseña__form div button,
+.ventana-cambiar-contraseña__form div input {
     background-color: #F6F6F6;
     border-radius: 12px;
     padding: 8px 12px;
@@ -262,7 +289,8 @@ select, select option {
     width: 100px;
 }
 
-.ventana-cambiar-contraseña__form div button:hover, .ventana-cambiar-contraseña__form div input:hover {
+.ventana-cambiar-contraseña__form div button:hover,
+.ventana-cambiar-contraseña__form div input:hover {
     background-color: #eeeeee;
 }
 
@@ -279,4 +307,131 @@ select, select option {
     backdrop-filter: blur(5px);
     opacity: 0.5;
     z-index: 1;
+}
+
+/* // X-Small devices (portrait phones, less than 576px)
+// No media query for `xs` since this is the default in Bootstrap */
+
+/* // XX-Large devices (larger desktops, 1400px and up) */
+@media (max-width: 1400px) {}
+
+/* // X-Large devices (large desktops, 1200px and up) */
+@media (max-width: 1200px) {
+    .main__container {
+        width: 75%;
+    }
+    .main-container__options button {
+        font-size: 14px;   
+    }
+
+    .main__ventana-cambiar-contraseña {
+        width: 28%;
+    }
+}
+
+/* // Large devices (desktops, 992px and up) */
+@media (max-width: 992px) {
+    .main__container {
+        width: 85%;
+    }
+
+    .main__ventana-cambiar-contraseña {
+        width: 34%;
+    }
+}
+
+/* // Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) {
+    body {
+        height: 100vh;
+        overflow: auto;
+    }
+
+    .header__toggle {
+        display: flex;
+    }
+
+    .header__navbar {
+        display: none;
+        width: 50%;
+        position: absolute;
+        top: 75px;
+        right: 0;
+        background-color: white;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    }
+
+    .header-navbar__ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+
+    .navbar-ul__list-item {
+        margin: 10px 0;
+    }
+
+    .navbar-ul__list-item a {
+        font-size: 18px;
+    }
+
+    .navbar-ul__list-item:not(:last-child) {
+        margin-right: 0;
+    }
+
+    .navbar-ul__list-item a {
+        color: black;
+    }
+
+    .navbar-ul__list-item a:hover {
+        color: #007bff;
+    }
+
+    .main__container {
+        width: 100%;
+        background-color: transparent;
+        border: none;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        box-shadow: none;
+    }
+
+    .main-container__options {
+        border: none;   
+    }
+
+    .container-informacion-tienda {
+        gap: 16px;
+    }
+
+    .container-informacion-tienda div label {
+        width: 33%;
+    }
+
+    .main__container-h2 {
+        margin: 0;
+    }
+
+    .main-container__data input {
+        background-color: transparent;
+    }
+
+    .container-datos-personales {
+        gap: 12px;
+    }
+
+    .main__ventana-cambiar-contraseña {
+        width: 44%;
+    }
+}
+
+/* // Small devices (landscape phones, 576px and up) */
+@media (max-width: 576px) {
+    .main__ventana-cambiar-contraseña {
+        width: 90%;
+    }
 }
